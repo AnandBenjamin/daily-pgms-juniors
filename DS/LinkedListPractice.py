@@ -40,4 +40,3 @@ Llist.appendElement(obj1)
 print(Llist.head)
 print(Llist.head.data)
 print(Llist.head.nextValue)
-
