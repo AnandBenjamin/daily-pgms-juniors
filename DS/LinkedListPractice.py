@@ -18,25 +18,52 @@ class Node:
 class LinkedList:
        def __init__(self):
               self.head=None
+
        def appendElement(self,element):
-              self.head=element                 
-       
+              
+              if(self.head==None):
+                     self.head=element
+                     print("Head is null so adding new element")
+              else:
+                     current=self.head                     
+                     
+                     while(current.nextValue!=None):
+                            current=current.nextValue
+							
+                     current.nextValue=element
+
+       def printElement(self):
+              l=[]
+              current=self.head
+              while(current!=None):
+                     l.append(current.data)
+                     #print(current.data)
+                     current=current.nextValue
+              return l
+                     
 obj1=Node(1)  #object created and value passed
 print(obj1)
 obj2=Node(2)
-#print(obj2)
+print(obj2)
 obj3=Node(3)
 #print(obj3)
-"""
-obj1.nextValue=obj2
-print(obj1.nextValue)
-obj2.nextValue=obj3
 
-print(obj2.nextValue)
-"""
 Llist=LinkedList()
-print(Llist)
+#print(Llist)
 Llist.appendElement(obj1)
-print(Llist.head)
-print(Llist.head.data)
-print(Llist.head.nextValue)
+print(Llist.printElement())
+#print(Llist.head)
+#print(Llist.head.data)
+#print(Llist.head.nextValue)
+Llist.appendElement(obj2)
+print(Llist.printElement())
+#print(Llist.head.nextValue)
+#print(Llist.head.nextValue.data)
+Llist.appendElement(obj3)
+print(Llist.printElement())
+#print(Llist.head.nextValue)
+#print(Llist.head.nextValue.data)
+#obj1.nextValue=obj2
+print(obj1.nextValue.data)
+#obj2.nextValue=obj3
+print(obj2.nextValue.data)
