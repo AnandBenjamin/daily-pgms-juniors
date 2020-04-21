@@ -67,7 +67,27 @@ class LinkedList:
             l.append(current.data)
             current=current.nextValue
         return l
-    
+
+    def Countlst(self):
+        current=self.head
+        count=0
+        while(current!=None):
+            count+=1
+            current=current.nextValue
+        return count
+
+    def insertatposition(self,position,value):
+        newElement=Node(value)
+        if(position==1):
+            newElement.nextValue=self.head
+            self.head=newElement
+        else:
+            current=self.head
+            for i in range(1,position-1):
+                current=current.nextValue
+            newElement.nextValue=current.nextValue
+            current.nextValue=newElement
+                
 
 obj1=Node(1)
 obj2=Node(2)
@@ -88,8 +108,11 @@ Llist.appendElement(obj2)
 Llist.appendElement(obj3)
 Llist.appendElement(obj4)
 Llist.appendElement(obj5)
-print(Llist.list())
+"""print(Llist.list())
 print(Llist.printElement())
 print(Llist.positionValue(3))
 print(Llist.printElement())
-print(Llist.positionValue(6))
+print(Llist.positionValue(6))"""
+print(Llist.Countlst())
+Llist.insertatposition(3,6)
+print(Llist.printElement())
