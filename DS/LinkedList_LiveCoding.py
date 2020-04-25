@@ -87,7 +87,17 @@ class LinkedList:
                 current=current.nextValue
             newElement.nextValue=current.nextValue
             current.nextValue=newElement
-                
+    def deleteFirst(self):
+           current=self.head
+           self.head=current.nextValue
+           return current.data
+    def deleteLast(self):
+           current=self.head
+           while(current.nextValue!=None):
+                  prev=current
+                  current=current.nextValue
+           prev.nextValue=None
+           return current.data
 
 obj1=Node(1)
 obj2=Node(2)
@@ -116,3 +126,13 @@ print(Llist.positionValue(6))"""
 print(Llist.Countlst())
 Llist.insertatposition(3,6)
 print(Llist.printElement())
+
+print(Llist.deleteFirst())
+print(Llist.printElement())
+
+
+print(Llist.deleteLast())
+print(Llist.printElement())
+
+
+
